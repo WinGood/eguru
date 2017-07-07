@@ -1,5 +1,6 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
+import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
 const client = {
   entry: {
@@ -20,6 +21,14 @@ const client = {
       },
     ],
   },
+  plugins: [
+    new UglifyJSPlugin({
+      compressor: {
+        warnings: false
+      },
+      comments: false
+    })
+  ]
 };
 
 const server = {

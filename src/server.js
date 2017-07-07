@@ -5,6 +5,7 @@ import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
 import * as bodyParser from 'body-parser';
+import compression from 'compression';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
 import { App } from './components/App';
@@ -20,6 +21,7 @@ app.use(bodyParser.json())
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
+app.use(compression());
 
 app.post('/contact', (req, res) => {
   // form body

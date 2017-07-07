@@ -20,12 +20,14 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
     "body-parser": "^1.17.2",
+    "compression": "^1.6.2",
     "ejs": "~2.4.1",
     "express": "~4.13.4",
     "nodemon": "^1.11.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.1",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "3.0.0",
     "webpack-node-externals": "^1.6.0"
   }
