@@ -4,6 +4,7 @@ import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
+import * as bodyParser from 'body-parser';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
 import { App } from './components/App';
@@ -14,9 +15,17 @@ const server = new Server(app);
 // use ejs templates
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
+
+app.post('/contact', (req, res) => {
+  // form body
+  console.log(req.body);
+  res.send({status: 'OK'});
+});
 
 // universal routing and rendering
 app.get('*', (req, res) => {

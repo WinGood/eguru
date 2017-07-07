@@ -12,7 +12,7 @@ export const Layout = props => (
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <a className="navbar-brand" href="#">Project name</a>
+          <Link className="navbar-brand" to="/">Project name</Link>
         </div>
         <div id="navbar" className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
